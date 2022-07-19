@@ -1,0 +1,36 @@
+﻿@page
+@model Buggy.Pages.AnotherTables.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AnotherTable[0].Aname)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.AnotherTable) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aname)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.AnotherTableId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.AnotherTableId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.AnotherTableId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
