@@ -8,6 +8,6 @@ namespace Buggy.Models.Scaffold
         public int TableId { get; set; }
         public int AnotherTableId { get; set; }
 
-        public virtual AnotherTable AnotherTable { get; set; } = null!;
+        public virtual AnotherTable? AnotherTable { get; set; } = null!;
     }
 }
